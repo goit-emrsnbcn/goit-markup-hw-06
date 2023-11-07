@@ -20,6 +20,7 @@ body {
     display: flex;
     justify-content: center;
     gap: 30px;
+    flex-wrap: wrap;
 }
 
 .bg-dark {
@@ -71,7 +72,11 @@ body {
 }
 
 .container {
-    width: 1440px;
+    /* width: 1440px; */
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .d-flex {
@@ -354,6 +359,7 @@ body {
 
 .team img {
     display: block;
+    width: 100%;
 }
 
 .team-caption {
@@ -385,6 +391,8 @@ body {
 .customer-icon {
     border: 1px solid #8e8f99;
     padding: 16px 32px;
+    flex-basis: calc(100% / 2 - 30px);
+    text-align: center;
 }
 
 .customer-icon svg {
@@ -514,3 +522,42 @@ body {
     fill: white;
 }
 /*END OF FOOTER STYLING*/
+
+/* CSS MEDIA QUERY */
+
+@media (min-width: 428px) {
+    .container {
+        width: 428px;
+    }
+}
+
+@media (min-width: 768px) {
+    /* 768px to 1199px */
+    .container {
+        width: 768px;
+    }
+
+    .about-item,
+    .team-item {
+        flex-basis: calc(100% / 2 - 30px);
+    }
+
+    .customer-icon {
+        flex-basis: calc(100% / 3 - 30px);
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        width: 1200px;
+    }
+
+    .about-item,
+    .team-item {
+        flex-basis: calc(100% / 4 - 30px);
+    }
+
+    .customer-icon {
+        flex-basis: calc(100% / 6 - 30px);
+    }
+}
